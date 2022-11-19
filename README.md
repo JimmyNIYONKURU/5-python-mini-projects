@@ -1,3 +1,1 @@
-# Poke-the-dot-game
-
-Poke he dot game code
+5 mini-projects in python
