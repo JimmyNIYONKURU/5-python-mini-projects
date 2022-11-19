@@ -1,0 +1,52 @@
+import random
+choix=['Ciseaux', 'Papier', 'Pierre','Tapez Fin pour terminer']
+from datetime import datetime
+now=datetime.now()
+score_Joueur=0
+score_cpu=0
+
+while True :
+    cpu=random.choice(choix)
+    Joueur=str(input("Ciseaux, Papier ou Pierre, Tapez Fin pour terminer?"))
+    if Joueur==cpu:
+        print("Egalité!")
+    elif Joueur =="Ciseaux":
+        if cpu =="Papier":
+            print("Félicitations! Vous gagnez! Le ciseau coupe le papier")
+            score_Joueur+=1
+        elif cpu =="Pierre":
+            print("Vous perdez! la pierre casse les ciseaux!")
+            score_cpu+=1
+    elif Joueur =="Papier":
+        if cpu =="Ciseaux":
+            print("Vous avez perdu! les ciseaux coupent le papier")
+            score_cpu+=1
+        elif cpu =="Pierre" :
+            print("Vous avez gagné féliciations! le papier couvre les pierres")
+            score_Joueur+=1
+    elif Joueur=="Pierre":
+        if cpu =="Ciseaux":
+            print("Vous avez gagné féliciations! La pierre casse les ciseaux")
+            score_Joueur+=1
+        elif cpu =="Papier":
+            print("Vous avez perdu! Le papier couvre la pierre!")
+            score_cpu+=1
+    elif Joueur =="Fin":
+        if score_Joueur > score_cpu :
+            print(f"Le joueur a eu  :{score_Joueur} en date du {now}")
+            print(f"L'ordinateur a eu :{score_cpu} en date du {now}")
+            print(f"Donc, vous avez gagné avec {score_Joueur} contre {score_cpu}")
+        elif score_Joueur == score_cpu :
+            print(f"Le joueur a eu  :{score_Joueur} en date du {now}")
+            print(f"L'ordinateur a eu :{score_cpu} en date du {now}") 
+            print("Donc, vous êtes au même score, prolongement")
+        else :
+            print(f"Le joueur a eu  :{score_Joueur} en date du {now}")
+            print(f"L'ordinateur a eu :{score_cpu} en date du {now}")
+            print(f"Donc, vous avez été battu avec {score_Joueur} contre {score_cpu}")
+
+        break
+    else:
+        print("Je n'ai pas compris! Veillez revoir ce que vous avez tapé svp!")
+        
+
